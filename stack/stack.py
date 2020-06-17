@@ -11,6 +11,21 @@ return elements in Last In First Out order.
    Make sure the Stack tests pass.
 3. What is the difference between using an array vs. a linked list when 
    implementing a Stack?
+
+# LinkedList
+  # Memory storage for LL is more dynamic than arrays.
+  # insertion and deletion are easier and faster
+  # require more net memory for functionality
+  # memory utilization is more efficient
+  # dynamic and flexible
+
+# Array
+  # arrays are quicker as have set size
+  # accessing an element is faster
+  # data is contiguous
+  # elements belong to an index
+  # insertion and deletion are more intensive
+  # memory utilization inefficient
 """
 
 

@@ -3,6 +3,16 @@ class Node:
         self.value = value
         self.next_node = next_node
 
+    def get_value(self):
+        return self.value
+
+    def get_next(self):
+        return self.next_node
+
+    def set_next(self, new_next):
+        # set this node's next_node reference to the passed in node
+        self.next_node = new_next
+
 class LinkedList:
     def __init__(self):
         self.head = None # stores a node, that corresponds to our first node in the list
@@ -63,6 +73,23 @@ class LinkedList:
             # otherwise, go to the next node
             current_node = current_node.next_node
         return False
+
+    def get_max(self):
+        if not self.head:
+            return None
+        # largest value so far
+        max_value = self.head.get_value()
+        # current node in list
+        current = self.head.get_next()
+        # check to see if we're still at a valid list node
+        while current:
+            # check if current value is greater than the max_value
+            if current.get_value() > max_value:
+                # if so, update our max_value variable
+                max_value = current.get_value()
+            # update the current node to the next node in the list
+            current = current.get_next()
+        return max_value
 
 # example
 # linked_list = LinkedList()

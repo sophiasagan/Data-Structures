@@ -91,6 +91,26 @@ class LinkedList:
             current = current.get_next()
         return max_value
 
+    def remove_tail(self):
+        if not self.head:
+            return None
+
+        if self.head is self.tail:
+            value = self.head.get_value()
+            self.head = None
+            self.tail = None
+            return value
+
+        current = self.head
+
+        while current.get_next() is not self.tail:
+            current = current.get_next()
+
+        value = self.tail.get_value()
+        self.tail = current
+        return value
+
+
 # example
 # linked_list = LinkedList()
 # linked_list.add_to_head(0)

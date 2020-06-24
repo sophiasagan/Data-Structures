@@ -165,10 +165,41 @@ class BSTNode:
     # Stretch Goals -------------------------
     # Note: Research may be required
 
+    #           A
+    #         /   \
+    #        /     \
+    #        B      C
+    #      /  \    /  \
+    #     /    \  /    \
+    #    D     E  F     G
+
     # Print Pre-order recursive DFT
+    # Preorder: visit each node before its children
+    # ___________Algorithm___________
+    # Until all nodes are traversed − A → B → D → E → C → F → G
+    # Step 1 − Visit root node.
+    # Step 2 − Recursively traverse left subtree.
+    # Step 3 − Recursively traverse right subtree.
+
     def pre_order_dft(self, node):
-        pass
+        if node == None:
+            return
+        print(node.value)
+        self.pre_order_dft(node.left)
+        self.pre_order_dft(node.right)
+
 
     # Print Post-order recursive DFT
+    # Postorder: visit each node after its children
+    # ___________Algorithm_____________ D → E → B → F → G → C → A
+    # Until all nodes are traversed −
+    # Step 1 − Recursively traverse left subtree.
+    # Step 2 − Recursively traverse right subtree.
+    # Step 3 − Visit root node.
     def post_order_dft(self, node):
-        pass
+        if node == None:
+            return
+
+        self.post_order_dft(node.left)
+        self.post_order_dft(node.right)
+        print(node.value)
